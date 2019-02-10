@@ -1,5 +1,16 @@
-
+body{
+	background-color : black;
+}
 
 #logo{
 	height: 100px;
+}
+
+hr{
+	border-color : white;
+}
+
+#map {
+	height: 600px;
+	margin-bottom: 30px;
 }
