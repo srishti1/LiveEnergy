@@ -1,5 +1,8 @@
 body{
 	background-color : black;
+	color: white;
+	Font-Family: 'Cabin', Sans-Serif;
+	Font-Size: 16px;
 }
 
 #logo{
@@ -10,7 +13,27 @@ hr{
 	border-color : white;
 }
 
-#map {
+ #map {
+ 	   
+       height: 600px; 
+       width: 600px;
+  		margin-top: 50px;
+       left: 10%;
+
+      }
+      
+ #container {
+ 	
+ 	width: 600px;
 	height: 600px;
-	margin-bottom: 30px;
-}
+	top: 56%;
+	left: 70%;
+	position: absolute;
+	margin-top: -330px;
+	margin-left: -300px;
+	border-style: solid;
+	border-width: 5px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+ }

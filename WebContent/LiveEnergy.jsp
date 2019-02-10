@@ -1,9 +1,11 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%-- <%@page import="java.util.*” %> --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link href="https://fonts.googleapis.com/css?family=Cabin|Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="index.css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -126,12 +128,11 @@
 <body>
 	<img id="logo" src="logo.jpg"></img>
 	<hr>
-	<div id="map"></div>
+	
 	<script>
 	
-		var arr = new Array();
 		var name;
-		var arr2 = new Array();
+		var snapshot;
 	
 		var query = firebase.database().ref('/Data/');
 		query.once("value", function(snapshot) {
@@ -142,14 +143,17 @@
 			  console.log(childData.Demand);
 			  console.log(childData.Latitude);
 			  console.log(childData.Longitude);
-			  arr.push("name");
+				
+			  var div = document.createElement("div");
+			      div.setAttribute('class', 'item');
+			      div.innerHTML = '<p>' + 'The average data consumption for ' + name + ' is ' + 
+			      parseFloat(childData.Demand / 30).toFixed(2) + ' kBtu/h.' + '</p>';
+			      document.getElementById("container").appendChild(div);
+			      
 			 
 			 });
-			 arr2 = arr;
 			});
-		
-		 console.log("length");
-		 console.log(arr2.length); 
+				
 		
 		function initMap() {
 			var map = new google.maps.Map(document.getElementById('map'), {
@@ -179,13 +183,16 @@
 					map : map
 				});
 			});
-		}
+		};
+		
+	
+	      
 	</script>
 	<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXQN_H5e8DA4xxj3JwpMBoNiqdDg5I3HI&callback=initMap">
 		
 	</script>
-
-
+	<div id="map"></div>
+	<div id="container"></div>
 </body>
 </html>
