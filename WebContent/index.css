@@ -9,6 +9,29 @@ body{
 	height: 100px;
 }
 
+a{
+	font-size: 20px;
+	float: right;
+	padding-top: 40px;
+	padding-right: 10px;
+	color: white;
+}
+
+a:link {
+  color: white;
+    text-decoration: none;
+  
+}
+a:active {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
 hr{
 	border-color : white;
 }

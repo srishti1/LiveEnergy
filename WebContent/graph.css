@@ -1,0 +1,9 @@
+body{
+	background-color: black;
+	color: white;
+}
+
+#chart_div{
+	margin-left: 350px;
+	color: white;
+}

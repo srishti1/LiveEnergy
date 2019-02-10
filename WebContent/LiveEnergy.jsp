@@ -127,6 +127,7 @@
 </head>
 <body>
 	<img id="logo" src="logo.jpg"></img>
+	<a href="graph.jsp">Graph</a>
 	<hr>
 	
 	<script>
