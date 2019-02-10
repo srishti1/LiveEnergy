@@ -64,8 +64,19 @@
 		console.log("demand" + demand);
 		console.log("longitude" + longitude);
 		console.log("latitude" + latitude);
+		//dont do firebase anywhere else
+			
+		var newData = {};
+	  		newData['/'+ name+'/']={
+				Demand : demand, 
+				Latitude : latitude, 
+				Longitude : longitude
+		};
+	  	firebase.database().ref().update(newData);
 		
-		
+			
+			
+			
 		$.getJSON(staticUrl, function(data) {
 			//console.log("-----------------");
 			FirstData = data;
